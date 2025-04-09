@@ -201,3 +201,28 @@ body.dark-mode .modal-content {
 body.dark-mode .toggle-container button {
   background-color: #666;
 }
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode .navbar {
+  background-color: #222;
+}
+
+body.dark-mode .about-text h1,
+body.dark-mode .typing-text {
+  color: #6cf;
+}
+
+body.dark-mode .about-text button {
+  background-color: #555;
+}
+
+body.dark-mode footer {
+  background-color: #222;
+}
+
+body.dark-mode .toggle-container button {
+  background-color: #666;
+}
