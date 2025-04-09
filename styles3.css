@@ -1,183 +1,203 @@
-/* Reset some defaults */
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  /* Navbar */
-  .navbar {
-    background-color: #004080;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar .logo {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .nav-links li a.active,
-  .nav-links li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* About Section */
-  .about-section {
-    padding: 60px 20px;
-    background-color: #fff;
-  }
-  
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
-  }
-  
-  .about-image img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-  }
-  
-  .about-text {
-    flex: 1;
-  }
-  
-  .about-text h1 {
-    font-size: 32px;
-    margin-bottom: 15px;
-    color: #004080;
-  }
-  
-  .about-text p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .about-text button {
-    padding: 10px 20px;
-    background-color: #004080;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .about-text button:hover {
-    background-color: #003060;
-  }
-  
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #004080;
-    color: white;
-    margin-top: 40px;
-  }
-  /* Modal */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #004080;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  text-decoration: underline;
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #004080;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.about-text button {
+  padding: 12px 24px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.about-text button:hover {
+  background-color: #003060;
+}
+
+/* Typing Text */
+.typing-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #004080;
+  margin-bottom: 20px;
+  min-height: 30px;
+}
+
+/* Modal */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 30px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
-    text-align: center;
-  }
-  
-  .close {
-    position: absolute;
-    top: 10px; right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  /* Typing effect */
-  .typing-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: #004080;
-    margin-top: 20px;
-    min-height: 30px;
-  }
-  
-  /* Dark mode */
-  body.dark-mode {
-    background-color: #121212;
-    color: #eee;
-  }
-  
-  body.dark-mode .navbar {
-    background-color: #222;
-  }
-  
-  body.dark-mode .about-text h1,
-  body.dark-mode .typing-text {
-    color: #6cf;
-  }
-  
-  body.dark-mode .about-text button {
-    background-color: #555;
-  }
-  
-  body.dark-mode footer {
-    background-color: #222;
-  }
-  
-  .toggle-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-  
-  .toggle-container button {
-    padding: 10px 16px;
-    background-color: #004080;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  body.dark-mode .toggle-container button {
-    background-color: #666;
-  }
-  
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #004080;
+  color: white;
+  margin-top: 50px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #eee;
+}
+
+body.dark-mode .navbar {
+  background-color: #222;
+}
+
+body.dark-mode .about-section {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .about-text h1,
+body.dark-mode .typing-text {
+  color: #00ccff;
+}
+
+body.dark-mode .about-text button {
+  background-color: #444;
+}
+
+body.dark-mode footer {
+  background-color: #222;
+}
+
+body.dark-mode .modal-content {
+  background-color: #333;
+  color: #eee;
+}
+
+/* Toggle Button */
+.toggle-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toggle-container button {
+  padding: 10px 16px;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+body.dark-mode .toggle-container button {
+  background-color: #666;
+}
