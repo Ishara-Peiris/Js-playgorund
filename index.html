@@ -184,6 +184,24 @@
       const isDark = document.body.classList.contains("dark-mode");
       document.getElementById("modeToggle").textContent = isDark ? "Light Mode" : "Dark Mode";
     });
+
+
+    function calculator(num1,num2,callback,callback2){
+    console.log(num1+num2);
+    callback(2,3);
+    callback2(12,3);
+
+  }
+  function multiply(num1,num2){
+    console.log(num1*num2);
+  }
+  function devide(num1,num2){
+    console.log(num1/num2);
+  }
+
+calculator(3,3,multiply,devide);
+  
+  
   </script>
 
 </body>

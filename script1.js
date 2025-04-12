@@ -57,4 +57,5 @@ function scrollToTop() {
   
     type(); // start typing
   });
+
   
