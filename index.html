@@ -218,6 +218,25 @@ let count = 0;
       document.getElementById('count').textContent = count;
     }
 
+
+
+    function addTask() {
+      const task = document.getElementById('taskInput').value;
+      if (task === '') return;
+
+      const li = document.createElement('li');
+      li.textContent = task;
+
+      // Delete button
+      const delBtn = document.createElement('button');
+      delBtn.textContent = '❌';
+      delBtn.onclick = () => li.remove();
+      li.appendChild(delBtn);
+
+      document.getElementById('taskList').appendChild(li);
+      document.getElementById('taskInput').value = '';
+    }
+
   
   </script>
 
