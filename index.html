@@ -179,6 +179,11 @@
   <button onclick="checkPalindrome()">Check</button>
   <p id="result"></p>
 
+
+  <h2>Random Quote</h2>
+  <p id="quote"></p>
+  <button onclick="getQuote()">New Quote</button>
+
   <!-- Bootstrap & JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -251,7 +256,21 @@ let count = 0;
       const result = word === reversed ? "Yes, it's a palindrome!" : "Nope!";
       document.getElementById('result').textContent = result;
     }
+    const quotes = [
+      "Believe in yourself!",
+      "Stay positive!",
+      "You can do it!",
+      "Keep learning!",
+      "Never give up!"
+    ];
 
+    function getQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote').textContent = quotes[randomIndex];
+    }
+
+    // Load first quote
+    getQuote();
   
   </script>
 
