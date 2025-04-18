@@ -271,6 +271,42 @@ let count = 0;
 
     // Load first quote
     getQuote();
+
+
+
+     // Fetch data from an API and render it
+     document.getElementById("loadDataBtn").addEventListener("click", async () => {
+      const res = await fetch("https://randomuser.me/api/?results=5");
+      const data = await res.json();
+      const users = data.results;
+
+      const container = document.getElementById("users");
+      container.innerHTML = "";
+
+      users.forEach(user => {
+        const { first, last } = user.name;
+        const card = document.createElement("div");
+        card.className = "user-card";
+        card.innerHTML = `<strong>${first} ${last}</strong><br>Email: ${user.email}`;
+        container.appendChild(card);
+      });
+    });
+
+    // Array operations with map, filter, reduce
+    document.getElementById("analyzeBtn").addEventListener("click", () => {
+      const numbers = [23, 45, 12, 67, 34, 89, 2, 50];
+
+      const evenNumbers = numbers.filter(n => n % 2 === 0);
+      const squared = numbers.map(n => n * n);
+      const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+
+      document.getElementById("analysisResult").textContent = `
+        Original: [${numbers.join(", ")}]
+        Evens: [${evenNumbers.join(", ")}]
+        Squared: [${squared.join(", ")}]
+        Total Sum: ${sum}
+      `;
+    });
   
   </script>
 
