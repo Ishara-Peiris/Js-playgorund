@@ -307,6 +307,88 @@ let count = 0;
         Total Sum: ${sum}
       `;
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    >
+    class Task {
+      constructor(description, dueDate) {
+        this.description = description;
+        this.dueDate = dueDate;
+        this.createdAt = new Date().toISOString();
+      }
+
+      getFormatted() {
+        return `${this.description} (Due: ${this.dueDate})`;
+      }
+    }
+
+    const taskForm = document.getElementById("taskForm");
+    const taskList = document.getElementById("taskList");
+
+    const saveTasks = (tasks) => {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    };
+
+    const loadTasks = () => {
+      const stored = localStorage.getItem("tasks");
+      return stored ? JSON.parse(stored) : [];
+    };
+
+    const renderTasks = () => {
+      taskList.innerHTML = "";
+      const tasks = loadTasks();
+      tasks.forEach((task, index) => {
+        const div = document.createElement("div");
+        div.className = "task";
+        div.textContent = `${task.description} - Due: ${task.dueDate}`;
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "❌";
+        removeBtn.onclick = () => {
+          tasks.splice(index, 1);
+          saveTasks(tasks);
+          renderTasks();
+        };
+        div.appendChild(removeBtn);
+        taskList.appendChild(div);
+      });
+    };
+
+    taskForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const desc = document.getElementById("taskInput").value.trim();
+      const date = document.getElementById("dateInput").value;
+
+      if (!desc || !date) {
+        alert("Please fill in all fields");
+        return;
+      }
+
+      const task = new Task(desc, date);
+      const tasks = loadTasks();
+      tasks.push(task);
+      saveTasks(tasks);
+      renderTasks();
+      taskForm.reset();
+    });
+
+    // Initial load
+    renderTasks();
   
   </script>
 
