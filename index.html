@@ -411,7 +411,7 @@ fruits.forEach((fruit, index) => {
 
 
 
-    >
+    
     const box = document.getElementById("colorBox");
     const startBtn = document.getElementById("startBtn");
     const stopBtn = document.getElementById("stopBtn");
@@ -444,6 +444,18 @@ fruits.forEach((fruit, index) => {
 
     startBtn.addEventListener("click", startChangingColor);
     stopBtn.addEventListener("click", stopChangingColor);
+
+
+
+    function capitalizeWords(str) {
+  return str.split(' ').map(word => 
+    word.charAt(0).toUpperCase() + word.slice(1)
+  ).join(' ');
+}
+
+console.log(capitalizeWords("hello world from javascript")); 
+// Output: "Hello World From Javascript"
+
   
   </script>
 
